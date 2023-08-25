@@ -1,0 +1,66 @@
+class _Automatisierung extends State<Automatisierung> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView(children: <Widget>[
+      SafeArea(
+          maintainBottomViewPadding: true,
+          child: Card(
+              margin: const EdgeInsets.all(5),
+              //color: Colors.amber,
+              shape: RoundedRectangleBorder(
+                //<-- SEE HERE
+                side: const BorderSide(
+                    //color: Colors.green,
+                    //width: 2,
+                    ),
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: Row(
+                children: [
+                  ElevatedButton(
+                    child: const Text("Home"),
+                    onPressed: () {
+                      navigateToHome(context);
+                    },
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  const ElevatedButton(
+                    onPressed: null,
+                    child: Text("Automatisierung"),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  const ElevatedButton(
+                    onPressed: null,
+                    child: Text("Hard- Und Software"),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  const ElevatedButton(
+                    onPressed: null,
+                    child: Text("Unternehmen"),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  const ElevatedButton(
+                    onPressed: null,
+                    child: Text("Jobs"),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  const ElevatedButton(
+                    onPressed: null,
+                    child: Text("Kontakt"),
+                  ),
+                ],
+              ))),
+    ]));
+  }
+}
