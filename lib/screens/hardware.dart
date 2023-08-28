@@ -3,7 +3,9 @@ import 'package:mynotes/screens/automatisierung.dart';
 
 import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
+import 'package:mynotes/screens/kontakt.dart';
 import 'package:mynotes/screens/unternehmen.dart';
+import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
 
 class Hardware extends StatefulWidget {
@@ -88,7 +90,7 @@ class _Hardware extends State<Hardware> {
                   SizedBox(width: screenSize.width / 20),
                   myInkWell('Jobs', navigateToJobs, 3),
                   SizedBox(width: screenSize.width / 20),
-                  myInkWell('Kontakt', null, 4),
+                  myInkWell('Kontakt', navigateToKontakt, 4),
                   //SizedBox(width: screenSize.width / 20),
                 ],
               ),
@@ -130,6 +132,7 @@ class _Hardware extends State<Hardware> {
         text2:
             'Wir verstehen uns als Partner unserer Kunden. Mit diesem Anspruch unterstützen wir Sie bei der Planung und Realisierung \nIhrer IT-Ausstattung und sorgen für IT-Sicherheit in Ihrem Unternehmen.\n\nEin leistungsfähiges IT-System ist heute für den Erfolg eines Unternehmens lebenswichtig. Die RAYEN INTEC GmbH berät \nSie in IT-Fragen, betreut und optimiert Ihr IT-System unter Einsatz leistungsstarker und zuverlässiger IT-Lösungen und IT-Produkte. \n\nHier ein Überblick aus unserem Leistungsspektrum:\n• IT-Betrieb - bestehend aus Betreuung, Überwachung, Patch-Management, Helpdesk und Vor-Ort-Service\n• Client-/Serverlösungen - wie z.B. Microsoft Windows Server, Small Business Server, Exchange, SQL, Linux, Unix\n• Betreuung von 3rd-Party-Software, ERP, CRM, Oracle, Citrix, Grafik, etc\n• Vertrieb, Installation und Konfiguration sämtlicher Hardware und Software \n• Kommunikation via Mailserver und EDV-Faxlösungen, Apple iPhone- & BlackBerry-Anbindungen \n• Enterprise-Lösungen: Clustering, Terminal-Dienste, Citrix, Virtualisierung Hyper-V, Xen und VMware \n• Internet-Anbindung über Breitband-DSL, ISDN, Standleitung, VPN, VoIP, Tele-Working-Arbeitsplätze \n• Programmierung von Individualsoftware \n• Consulting im Bereich IT-Sicherheit - Firewall, Antivirus, Backup, VPN, Risko-Management, etc.\n• Urlaubsvertretung, Mitarbeiterüberlassung, Outsourcing\n• Schulungen - Microsoft Windows, Office , Messaging, Linux, Unix, Mac OSX',
         nav1: null,
+        buttonText: 'mehr Erfahren...',
       ),
     ];
     List<Widget> containersMid = [
@@ -141,6 +144,7 @@ class _Hardware extends State<Hardware> {
         text2:
             'Ein Netzwerk verbindet. Wir übernehmen den Komplettaufbau von IT-Systemen.\n\nNeben dem Verkauf von Netzwerken, Servern, Computern, Druckern, Software sowie Zubehör beschäftigen wir uns mit Sicherheitslösungen, dem Betrieb und Support von IT-Systemen und der Einbindung bzw. Anpassung an die Anforderung unserer Kunden. \n\nWir beraten Sie im Hinblick auf zukünftige Anforderungen an Ihre Geräte und helfen Ihnen bei der Planung und Realisierung oder Erweiterung von IT-Systemen. Dabei erfinden wir den Computer nicht jeden Tag neu, sondern vertrauen auf Partner und Anbieter mit langjähriger IT-Erfahrung, um bestmögliche Leistung abliefern zu können. Wir arbeiten dabei mit Markenherstellen zusammen, deren Produkte und Services geprüft sind und nehmen an deren Zertifizierungsprogrammen teil.',
         nav1: null,
+        buttonText: 'mehr Erfahren...',
       ),
       Container(
         child: SizedBox(
@@ -161,13 +165,15 @@ class _Hardware extends State<Hardware> {
             )),
       ),
       MyContainer1(
-          context: context,
-          alignment: Alignment.topLeft,
-          color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
-          text: 'Sicherheit',
-          text2:
-              'Wir übernehmen den Schutz Ihres Netzwerks gegen Computer-Viren und Datendiebe. Lehnen Sie sich das nächste Mal entspannt zurück, wenn in der Presse wieder über einen neuen Wurm berichtet wird. \n\nWir kümmern uns um präventive technische Werkzeuge wie Firewalls und Intrusion-Detection-Systeme, als auch um durchdachte Grundsätze (Policies), die den Menschen als Anwender in das System einbezieht. Schutz nicht nur von Außen - auch von Innen besteht Schutzbedarf. \n\nUnsere Leistungen im Bereich Computer-Sicherheit: \n• Security-Auditing Ihres Netzwerkes mit dafür geeigneten Tools \n• Konfiguration von Router, Firewalls, Security-Appliances, Antivirusschutzlösungen, etc. \n• 24/7-Monitoring der relevanten Systeme durch unsere Nagios-Server \n• Schnelle Reaktion beim Bekanntwerden von neuen Sicherheitslücken \n• Beratung und Einrichtung von geeigneten Backup-Strategien (gesamtheitliche Lösungen) \n• Beratung und Einsatz zu Themen Datenablage, Datensicherung, Archivierung, Risiko-Management, etc. \n• Schulung Ihrer Mitarbeiter im Unternehmen zum Thema Sicherheit ',
-          nav1: null),
+        context: context,
+        alignment: Alignment.topLeft,
+        color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
+        text: 'Sicherheit',
+        text2:
+            'Wir übernehmen den Schutz Ihres Netzwerks gegen Computer-Viren und Datendiebe. Lehnen Sie sich das nächste Mal entspannt zurück, wenn in der Presse wieder über einen neuen Wurm berichtet wird. \n\nWir kümmern uns um präventive technische Werkzeuge wie Firewalls und Intrusion-Detection-Systeme, als auch um durchdachte Grundsätze (Policies), die den Menschen als Anwender in das System einbezieht. Schutz nicht nur von Außen - auch von Innen besteht Schutzbedarf. \n\nUnsere Leistungen im Bereich Computer-Sicherheit: \n• Security-Auditing Ihres Netzwerkes mit dafür geeigneten Tools \n• Konfiguration von Router, Firewalls, Security-Appliances, Antivirusschutzlösungen, etc. \n• 24/7-Monitoring der relevanten Systeme durch unsere Nagios-Server \n• Schnelle Reaktion beim Bekanntwerden von neuen Sicherheitslücken \n• Beratung und Einrichtung von geeigneten Backup-Strategien (gesamtheitliche Lösungen) \n• Beratung und Einsatz zu Themen Datenablage, Datensicherung, Archivierung, Risiko-Management, etc. \n• Schulung Ihrer Mitarbeiter im Unternehmen zum Thema Sicherheit ',
+        nav1: null,
+        buttonText: 'mehr Erfahren...',
+      ),
       MyContainer1(
         context: context,
         alignment: Alignment.topLeft,
@@ -176,6 +182,7 @@ class _Hardware extends State<Hardware> {
         text2:
             'Im Webdesign setzen wir ganz auf Erfahrung. Nur wer schon eine große Anzahl von Internetseiten gestaltet und sich im Internet mit dem geschulten Blick eines Fachmanns bewegt, kann aus dem notwendigen Ideenpool das grafische Konzept herausfinden, das Ihr Unternehmen am besten darstellt. \n\nProjekt-Management - der erste Schritt zu einer erfolgreichen Website ist eine intensive Beratung, bei der Ziele und Zielgruppen exakt definiert werden. Wir entwickeln zusammen mit Ihnen die Struktur, das Interaktionsdesign und das Online-Marketing für Ihre Internetseite. \n\nIhr Internetauftritt sollte heutzutage auf einem Content Mangement System fundieren. Sie haben damit die Möglichkeit eigenständig die Inhalte der Internetseiten zu ändern. Wir versuchen diesem Ansatz auch bei hochgrafischen Websites gerecht zu werden. Schlagworte wie E-Commerce & Online-Shop, Online-Marketing, RSS, SilverLight-, Flash-Animation, Usability und Barrierefreiheit sind uns stets ein Begriff. \n\nTechnik/Webhosting Wir setzen sowohl die Open-Source-Technologien Linux, Apache, PHP und MySQL als auch die Microsoft-Produkte wie MS-IIS und MS-SQL ein. Wir bieten Ihnen damit eine sichere Plattform für ihren individuellen Webauftritt.! ',
         nav1: null,
+        buttonText: 'mehr Erfahren...',
       ),
       Container(
         child: SizedBox(
@@ -206,6 +213,7 @@ class _Hardware extends State<Hardware> {
         text2:
             'Im Rahmen einer umfassenden zuverlässigen EDV-Betreuung bieten wir Ihnen kalkulierbare Servicedienstleistungen in Form von Wartungsverträgen oder auch als kostengünstigere vertragsfreie Variante sowie den Anwender-Support: \n\n• Serviceverträge / EDV-Wartungsverträge \n• EDV-Wartung by call (vertragsfrei) \n• Anwender-Support / Helpdesk \nUnser Angebot bezieht sich auf die Betreuung aller mit IT verbundenen Aufgaben, die regelmäßig als Wartung erfolgen sollten: \n• Analyse und Auswertung der Systemprotokolle \n• Test und Durchführung von Systemupdates (Firmware-Updates, Software-Updates für Betriebssysteme, Office usw.) \n• Tape-Wechsel, Kontrolle von Backups, Funktionstest für Recovery (Test von Datenrücksicherungen) \n• Analyse von Virenscannern und Firewall-Lösungen \n• Überprüfung der Notstromversorgung (USV) \n• Prüfen der Netzwerk-/ Telefon-Verkabelung (v.a. bei Netzwerkfehlern) \n• Hardwarekontrolle von Servern, Clients, Netzwerkgeräten, Druckern \n• Festplattenanalyse und Datenbereinigung (SMART Daten auslesen), Defragmentierung \n• Gerätereinigung (Server, PCs, Drucker, Klimageräte) \n• Optimierung von Arbeitsprozessen \n• Klärung von Anwenderfragen \n• Dokumentation der erfolgten Tätigkeiten/Massnahmen/Netzwerkdokumentation',
         nav1: null,
+        buttonText: 'mehr Erfahren...',
       ),
     ];
 
@@ -276,6 +284,9 @@ class _Hardware extends State<Hardware> {
               childCount: containersSmall.length,
             ),
           ),
+          SliverToBoxAdapter(
+            child: BottomBar(),
+          )
         ]));
   }
 }
@@ -314,11 +325,10 @@ void navigateToJobs(BuildContext context) {
     MaterialPageRoute(builder: (context) => const Jobs()),
   );
 }
-/*
-  void navigateToKontakt(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Kontakt()),
-    );
-  }
-  */
+
+void navigateToKontakt(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Kontakt()),
+  );
+}

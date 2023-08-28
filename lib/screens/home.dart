@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mynotes/screens/automatisierung.dart';
 import 'package:mynotes/screens/hardware.dart';
 import 'package:mynotes/screens/jobs.dart';
+import 'package:mynotes/screens/jobs_seperate.dart';
 import 'package:mynotes/screens/kontakt.dart';
 import 'package:mynotes/screens/unternehmen.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
@@ -124,7 +125,8 @@ class _Home extends State<Home> {
           text: 'Automatisierung',
           text2:
               'Wir sind seit vielen Jahren mit viel Engagement und höchster Zuverlässigkeit in der Automatisierungsbranche zu Hause. Hier sind wir jeden Tag gefordert, passgenaue und individuelle Lösungen für die verschiedensten Anforderungen zu entwickeln und vor Ort umzusetzen. Mit über 20 Jahren Erfahrung in verschiedenen Industriezweigen besitzen wir viel Erfahrung und Ausdauer, mit unseren Kunden Projekte zu entwicklen und umzusetzen. \n\n Wir liefern Lösungen aus einer Hand. Von der  Aufnahme, Lösung, Elektroprojektierung, Schaltschrankbau, SPS-Programmierung, Visualisierung bis hin zum Leitsystem, SCADA oder ERP-Systemen.',
-          nav1: navigateToAutomatisierung),
+          nav1: navigateToAutomatisierung,
+          buttonText: 'mehr Erfahren...'),
       MyContainer1(
           context: context,
           alignment: Alignment.topLeft,
@@ -132,32 +134,39 @@ class _Home extends State<Home> {
           text: 'IT-Systemhaus',
           text2:
               'Wir verstehen uns als professionelles Systemhaus und Dienstleistungspartner rund um die IT-Technik für kleine und mittelständische Unternehmen mit Erfahrungen aus über 20 Jahren. Wir leisten kompletten IT-Service für EDV-Hard- & Software, Internet-Services und Software-Entwicklung. \n\n Unser Service- und Betreuungsangebot umfasst die gesamte Planung und Umsetzung, sowie die Betreuung Ihrer IT-Landschaft. Sei es als Komplettpaket oder auch als Spezialist für bestimmte Themen in Ihrem Unternehmen. Egal ob Einzel- oder Gesamtlösung, bei uns bekommen Sie alles aus einer Hand. Für uns steht der persönliche Kontakt im Vordergrund – direkte Ansprechpartner für Ihre IT-Aufgaben sind für uns die Voraussetzung für eine vertrauensvolle Zusammenarbeit.',
-          nav1: navigateToHardware),
+          nav1: navigateToHardware,
+          buttonText: 'mehr Erfahren...'),
     ];
 
     List<Widget> containersMid = [
       MyContainer2(
-          context: context,
-          alignment: Alignment.topLeft,
-          color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
-          text: 'Stellenangebote Automatisierung',
-          text2: [
-            'Automatisierungstechniker (m/w)',
-            '',
-            'Elektroprojektant (m/w)',
-            ''
-          ]),
+        context: context,
+        alignment: Alignment.topLeft,
+        color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
+        text: 'Stellenangebote Automatisierung',
+        text2: [
+          'Automatisierungstechniker (m/w)',
+          '',
+          'Elektroprojektant (m/w)',
+          ''
+        ],
+        nav1: navigateToJob1,
+        nav2: navigateToJob2,
+      ),
       MyContainer2(
-          context: context,
-          alignment: Alignment.topLeft,
-          color: const Color.fromARGB(255, 53, 80, 112).withOpacity(0.5),
-          text: 'Stellenangebote EDV-Technik',
-          text2: [
-            'Netzwerkadministrator Windows (m/w)',
-            '',
-            'Software-Entwickler ',
-            'Kenntnisse: C# & MS-SQL-Server'
-          ]),
+        context: context,
+        alignment: Alignment.topLeft,
+        color: const Color.fromARGB(255, 53, 80, 112).withOpacity(0.5),
+        text: 'Stellenangebote EDV-Technik',
+        text2: [
+          'Netzwerkadministrator Windows (m/w)',
+          '',
+          'Software-Entwickler ',
+          'Kenntnisse: C# & MS-SQL-Server'
+        ],
+        nav1: navigateToJob3,
+        nav2: navigateToJob4,
+      ),
     ];
 
     List<Widget> containersSmall = [
@@ -177,7 +186,8 @@ class _Home extends State<Home> {
           text: 'Fernwartung',
           text2:
               'Unseren Kunden können wir auch über das Internet direkt am eigenen Windows-Computer helfen. Dazu loggen wir uns über eine Fernwartungssoftware auf Ihrem Bildschirm ein.',
-          nav1: null),
+          nav1: null,
+          buttonText: 'mehr Erfahren...'),
     ];
 
     var screenSize = MediaQuery.of(context).size;
@@ -326,5 +336,41 @@ void navigateToKontakt(BuildContext context) {
   Navigator.push(
     context,
     MaterialPageRoute(builder: (context) => const Kontakt()),
+  );
+}
+
+void navigateToJob1(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) =>
+            JobsSeperate(title1: jobTitle[0], text1: jobText[0])),
+  );
+}
+
+void navigateToJob2(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) =>
+            JobsSeperate(title1: jobTitle[1], text1: jobText[1])),
+  );
+}
+
+void navigateToJob3(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) =>
+            JobsSeperate(title1: jobTitle[2], text1: jobText[2])),
+  );
+}
+
+void navigateToJob4(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) =>
+            JobsSeperate(title1: jobTitle[3], text1: jobText[3])),
   );
 }

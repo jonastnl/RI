@@ -3,6 +3,7 @@ import 'package:mynotes/screens/hardware.dart';
 
 import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
+import 'package:mynotes/screens/kontakt.dart';
 import 'package:mynotes/screens/unternehmen.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
 
@@ -60,7 +61,7 @@ class _Automatisierung extends State<Automatisierung> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: <Color>[
-            const Color.fromARGB(255, 204, 55, 40).withOpacity(0.8),
+            const Color.fromARGB(255, 204, 55, 40).withOpacity(1),
             const Color.fromARGB(255, 204, 55, 40).withOpacity(0.0),
           ],
         ),
@@ -88,7 +89,7 @@ class _Automatisierung extends State<Automatisierung> {
                   SizedBox(width: screenSize.width / 20),
                   myInkWell('Jobs', navigateToJobs, 3),
                   SizedBox(width: screenSize.width / 20),
-                  myInkWell('Kontakt', null, 4),
+                  myInkWell('Kontakt', navigateToKontakt, 4),
                   //SizedBox(width: screenSize.width / 20),
                 ],
               ),
@@ -119,19 +120,19 @@ class _Automatisierung extends State<Automatisierung> {
     const TextContainer(titleInd: 6, textInd: 6),
     const TextContainer(titleInd: 7, textInd: 7),
     const TextContainer(titleInd: 8, textInd: 8),
-    const BottomBar(),
   ];
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 1000),
         child: myAppBar(context),
       ),
-      body: Row(children: [
-        Drawer(
+      body: Stack(children: [
+        /*Drawer(
             child: ListView(children: <Widget>[
           ListTile(
               title: const Text("Leistungen"),
@@ -196,37 +197,44 @@ class _Automatisierung extends State<Automatisierung> {
                   TextContainer;
                 });
               }),
-        ])),
-        Expanded(
-          child: CustomScrollView(slivers: <Widget>[
-            SliverGrid(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,
-                  childAspectRatio: 4,
-                  mainAxisSpacing: 10.0,
-                  crossAxisSpacing: 10.0),
-              delegate: SliverChildBuilderDelegate(
-                (context, index) {
-                  return Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.transparent,
-                      ),
-                      child: containersBig[index]);
-                },
-                childCount: containersBig.length,
-              ),
+        ])),*/
+        CustomScrollView(clipBehavior: Clip.antiAlias, slivers: <Widget>[
+          SliverToBoxAdapter(
+            //maintainBottomViewPadding: true,
+
+            child: Column(children: <Widget>[
+              SizedBox(
+                  height: screenSize.height * 0.4,
+                  width: screenSize.width,
+                  child: Image.asset(
+                    'assets/images/pexels-cátia-matos-1072179.jpg',
+                    fit: BoxFit.cover,
+                  )),
+            ]),
+          ),
+          SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 2,
+                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 10.0),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                return Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 53, 80, 112),
+                    ),
+                    child: containersBig[index]);
+              },
+              childCount: containersBig.length,
             ),
-          ]),
-        )
-        //TextContainer(title1: title1, text1: text1)
+          ),
+          SliverToBoxAdapter(
+            child: const BottomBar(),
+          )
+        ]),
       ]),
-      //bottomNavigationBar: BottomBar(),
     );
-    /*TextField(
-                controller: titleController, style: TextStyle(fontSize: 20)),
-            const SizedBox(height: 20),
-            TextField(
-                controller: textController, style: TextStyle(fontSize: 15))*/
   }
 }
 
@@ -295,7 +303,6 @@ class TextContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(8),
-        color: const Color.fromARGB(234, 192, 59, 59),
         alignment: Alignment.topLeft,
 
         //color: Colors.teal[200],
@@ -345,11 +352,10 @@ void navigateToJobs(BuildContext context) {
     MaterialPageRoute(builder: (context) => const Jobs()),
   );
 }
-/*
-  void navigateToKontakt(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Kontakt()),
-    );
-  }
-  */
+
+void navigateToKontakt(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Kontakt()),
+  );
+}

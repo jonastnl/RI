@@ -4,6 +4,8 @@ import 'package:mynotes/screens/hardware.dart';
 
 import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
+import 'package:mynotes/screens/kontakt.dart';
+import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
 import 'package:mynotes/widget/myContainerPic.dart';
 
@@ -89,7 +91,7 @@ class _Unternehmen extends State<Unternehmen> {
                   SizedBox(width: screenSize.width / 20),
                   myInkWell('Jobs', navigateToJobs, 3),
                   SizedBox(width: screenSize.width / 20),
-                  myInkWell('Kontakt', null, 4),
+                  myInkWell('Kontakt', navigateToKontakt, 4),
                   //SizedBox(width: screenSize.width / 20),
                 ],
               ),
@@ -122,6 +124,7 @@ class _Unternehmen extends State<Unternehmen> {
         text2:
             'Die RAYEN INTEC GmbH wurde im Jahr 1990 als Dienstleister für Entwicklung industrieller Anlagenautomatisierung gegründet. Die zu dieser Zeit beginnende Verschmelzung von Automatisierung und elektronischer Datenverarbeitung führte uns zu einem zukuftsorierentierten Unternehmen in den Geschäftbereichen von Automatisierung sowie IT-Hard- and Software. \n\nHeute verstehen wir uns als modernes, leistungsstarkes und innovatives Unternehmen für unseren Kunden. Gemeinsam optimieren wir Prozesse, erstellen Lösungen und integrieren diese in vorhandene IT-Systeme. Fortschritt und Innovation sind unser Antrieb!',
         nav1: null,
+        buttonText: 'mehr Erfahren',
       ),
       Container(
         child: SizedBox(
@@ -168,7 +171,7 @@ class _Unternehmen extends State<Unternehmen> {
                   height: screenSize.height * 0.4,
                   width: screenSize.width,
                   child: Image.asset(
-                    'assets/images/audi.jpg',
+                    'assets/images/pexels-cátia-matos-1072179.jpg',
                     fit: BoxFit.cover,
                   )),
             ]),
@@ -199,6 +202,9 @@ class _Unternehmen extends State<Unternehmen> {
               childCount: containersSmall.length,
             ),
           ),
+          SliverToBoxAdapter(
+            child: BottomBar(),
+          )
         ]));
   }
 }
@@ -237,11 +243,10 @@ void navigateToJobs(BuildContext context) {
     MaterialPageRoute(builder: (context) => const Jobs()),
   );
 }
-/*
-  void navigateToKontakt(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Kontakt()),
-    );
-  }
-  */
+
+void navigateToKontakt(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Kontakt()),
+  );
+}

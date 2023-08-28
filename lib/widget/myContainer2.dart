@@ -8,6 +8,8 @@ class MyContainer2 extends StatelessWidget {
     required this.color,
     required this.text,
     required this.text2,
+    required this.nav1,
+    required this.nav2,
   });
 
   final BuildContext context;
@@ -15,6 +17,8 @@ class MyContainer2 extends StatelessWidget {
   final color;
   final String text;
   final List<String> text2;
+  final nav1;
+  final nav2;
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +38,22 @@ class MyContainer2 extends StatelessWidget {
               const SizedBox(height: 10),
               Card(
                 child: ListTile(
-                    leading: const Icon(Icons.work),
-                    title: Text(text2[0]),
-                    subtitle: Text(text2[1])),
+                  leading: const Icon(Icons.work),
+                  title: Text(text2[0]),
+                  subtitle: Text(text2[1]),
+                  onTap: () {
+                    nav1(context);
+                  },
+                ),
               ),
               Card(
                 child: ListTile(
                     leading: const Icon(Icons.work),
                     title: Text(text2[2]),
-                    subtitle: Text(text2[3])),
+                    subtitle: Text(text2[3]),
+                    onTap: () {
+                      nav2(context);
+                    }),
               ),
               const SizedBox(height: 10),
             ]))),

@@ -9,6 +9,7 @@ class MyContainer1 extends StatelessWidget {
     required this.text,
     required this.text2,
     required this.nav1,
+    required this.buttonText,
   });
 
   final BuildContext context;
@@ -16,6 +17,7 @@ class MyContainer1 extends StatelessWidget {
   final color;
   final String text;
   final String text2;
+  final String buttonText;
   final nav1;
 
   @override
@@ -41,7 +43,7 @@ class MyContainer1 extends StatelessWidget {
                     onPressed: () {
                       nav1(context);
                     },
-                    child: const Text('mehr Erfahren...'),
+                    child: Text(buttonText),
                   ),
                 ]),
               ]))))

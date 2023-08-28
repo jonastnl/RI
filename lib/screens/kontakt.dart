@@ -5,6 +5,7 @@ import 'package:mynotes/screens/hardware.dart';
 import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
 import 'package:mynotes/screens/unternehmen.dart';
+import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
 
 class Kontakt extends StatefulWidget {
@@ -89,7 +90,7 @@ class _Kontakt extends State<Kontakt> {
                   SizedBox(width: screenSize.width / 20),
                   myInkWell('Jobs', navigateToJobs, 3),
                   SizedBox(width: screenSize.width / 20),
-                  myInkWell('Kontakt', null, 4),
+                  myInkWell('Kontakt', navigateToKontakt, 4),
                   //SizedBox(width: screenSize.width / 20),
                 ],
               ),
@@ -125,26 +126,26 @@ class _Kontakt extends State<Kontakt> {
             )),
       ),
       MyContainer1(
-        context: context,
-        alignment: Alignment.topLeft,
-        color: const Color.fromARGB(255, 53, 80, 112).withOpacity(1),
-        text: 'Profil',
-        text2:
-            'Die RAYEN INTEC GmbH wurde im Jahr 1990 als Dienstleister für Entwicklung industrieller Anlagenautomatisierung gegründet. Die zu dieser Zeit beginnende Verschmelzung von Automatisierung und elektronischer Datenverarbeitung führte uns zu einem zukuftsorierentierten Jobs in den Geschäftbereichen von Automatisierung sowie IT-Hard- and Software. \n\nHeute verstehen wir uns als modernes, leistungsstarkes und innovatives Jobs für unseren Kunden. Gemeinsam optimieren wir Prozesse, erstellen Lösungen und integrieren diese in vorhandene IT-Systeme. Fortschritt und Innovation sind unser Antrieb!',
-        nav1: null,
-      ),
+          context: context,
+          alignment: Alignment.topLeft,
+          color: const Color.fromARGB(255, 53, 80, 112).withOpacity(1),
+          text: 'Profil',
+          text2:
+              'Die RAYEN INTEC GmbH wurde im Jahr 1990 als Dienstleister für Entwicklung industrieller Anlagenautomatisierung gegründet. Die zu dieser Zeit beginnende Verschmelzung von Automatisierung und elektronischer Datenverarbeitung führte uns zu einem zukuftsorierentierten Jobs in den Geschäftbereichen von Automatisierung sowie IT-Hard- and Software. \n\nHeute verstehen wir uns als modernes, leistungsstarkes und innovatives Jobs für unseren Kunden. Gemeinsam optimieren wir Prozesse, erstellen Lösungen und integrieren diese in vorhandene IT-Systeme. Fortschritt und Innovation sind unser Antrieb!',
+          nav1: navigateToUnternehmen,
+          buttonText: 'mehr Erfahren...'),
     ];
 
     List<Widget> containersBig = [
       MyContainer1(
-        context: context,
-        alignment: Alignment.topLeft,
-        color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
-        text: 'Kontakt',
-        text2:
-            'Sie erreichen und Montag bis Freitag zu unseren Bürozeiten von 08:00 Uhr bis 16:00 Uhr unter folgender Anschrift: \n\nRAYEN INTEC GmbH\nAM Hohen Ufer 4\nD-07318 Saalfeld\n\nTel.: +49 (3671) 5366-0\nFax: +49 (3671) 5366-50\n\neMail: info@rayen-intec.de',
-        nav1: null,
-      ),
+          context: context,
+          alignment: Alignment.topLeft,
+          color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
+          text: 'Kontakt',
+          text2:
+              'Sie erreichen und Montag bis Freitag zu unseren Bürozeiten von 08:00 Uhr bis 16:00 Uhr unter folgender Anschrift: \n\nRAYEN INTEC GmbH\nAM Hohen Ufer 4\nD-07318 Saalfeld\n\nTel.: +49 (3671) 5366-0\nFax: +49 (3671) 5366-50\n\neMail: info@rayen-intec.de',
+          nav1: null,
+          buttonText: 'mehr Erfahren...'),
       Container(
         child: SizedBox(
             child: Image.asset(
@@ -200,6 +201,9 @@ class _Kontakt extends State<Kontakt> {
               childCount: containersSmall.length,
             ),
           ),
+          SliverToBoxAdapter(
+            child: BottomBar(),
+          )
         ]));
   }
 }
