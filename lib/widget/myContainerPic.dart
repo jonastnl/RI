@@ -9,7 +9,7 @@ class MyContainerPic extends StatelessWidget {
     required this.text,
     required this.text2,
     required this.nav1,
-    required this.pic,
+    this.pic,
   });
 
   final BuildContext context;

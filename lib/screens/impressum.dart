@@ -7,7 +7,6 @@ import 'package:mynotes/screens/jobs.dart';
 import 'package:mynotes/screens/kontakt.dart';
 import 'package:mynotes/screens/unternehmen.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
-import 'package:mynotes/widget/myContainer1.dart';
 import 'package:mynotes/widget/myContainerPic.dart';
 
 class Impressum extends StatefulWidget {

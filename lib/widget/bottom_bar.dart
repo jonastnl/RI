@@ -39,6 +39,8 @@ class BottomBar extends StatelessWidget {
                 s2: 'Datenschutz',
                 s3: 'AGB',
                 dest1: navigateToImpressum,
+                dest2: navigateToDatenschutz,
+                dest3: navigateToAgb,
               ),
               BottomBarColumn(
                 heading: 'SOCIAL',

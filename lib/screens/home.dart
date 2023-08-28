@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mynotes/screens/agb.dart';
 
 import 'package:mynotes/screens/automatisierung.dart';
+import 'package:mynotes/screens/datenschutz.dart';
 import 'package:mynotes/screens/hardware.dart';
 import 'package:mynotes/screens/impressum.dart';
 import 'package:mynotes/screens/jobs.dart';
@@ -382,5 +384,19 @@ void navigateToImpressum(BuildContext context) {
   Navigator.push(
     context,
     MaterialPageRoute(builder: (context) => const Impressum()),
+  );
+}
+
+void navigateToDatenschutz(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Datenschutz()),
+  );
+}
+
+void navigateToAgb(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Agb()),
   );
 }

@@ -8,8 +8,6 @@ import 'package:mynotes/screens/kontakt.dart';
 import 'package:mynotes/screens/unternehmen.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
-import 'package:mynotes/widget/myContainer2.dart';
-import 'package:mynotes/widget/myContainerPic.dart';
 
 class JobsSeperate extends StatefulWidget {
   const JobsSeperate({Key? key, required this.title1, required this.text1})
