@@ -98,7 +98,9 @@ class _Automatisierung extends State<Automatisierung> {
               width: screenSize.width / 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateToImpressum;
+              },
               child: const Text(
                 'Impressum',
                 style: TextStyle(color: Colors.white),

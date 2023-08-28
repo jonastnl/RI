@@ -63,6 +63,7 @@ flutter:
     - assets/images/audiJobs.jpg
     - assets/images/BMWi.gif
     - assets/texts/Jobs.txt
+    - assets/images/logo_esf.jpg
 
 
   # The following line ensures that the Material Icons font is

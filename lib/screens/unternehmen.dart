@@ -100,7 +100,9 @@ class _Unternehmen extends State<Unternehmen> {
               width: screenSize.width / 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateToImpressum(context);
+              },
               child: const Text(
                 'Impressum',
                 style: TextStyle(color: Colors.white),
@@ -124,7 +126,7 @@ class _Unternehmen extends State<Unternehmen> {
         text2:
             'Die RAYEN INTEC GmbH wurde im Jahr 1990 als Dienstleister für Entwicklung industrieller Anlagenautomatisierung gegründet. Die zu dieser Zeit beginnende Verschmelzung von Automatisierung und elektronischer Datenverarbeitung führte uns zu einem zukuftsorierentierten Unternehmen in den Geschäftbereichen von Automatisierung sowie IT-Hard- and Software. \n\nHeute verstehen wir uns als modernes, leistungsstarkes und innovatives Unternehmen für unseren Kunden. Gemeinsam optimieren wir Prozesse, erstellen Lösungen und integrieren diese in vorhandene IT-Systeme. Fortschritt und Innovation sind unser Antrieb!',
         nav1: null,
-        buttonText: 'mehr Erfahren',
+        buttonText: 'mehr Erfahren...',
       ),
       Container(
         child: SizedBox(
@@ -146,14 +148,14 @@ class _Unternehmen extends State<Unternehmen> {
         )),
       ),
       MyContainerPic(
-        context: context,
-        alignment: Alignment.topLeft,
-        color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
-        text: 'BMWi-Förderung',
-        text2:
-            'Ein Teil unserer Forschungs- und Entwicklungsarbeiten werden gefördert durch das Bundesministerium für Wirtschaft und Technologie aufgrund eines Beschlusses des Deutschen Bundestages.',
-        nav1: null,
-      ),
+          context: context,
+          alignment: Alignment.topLeft,
+          color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
+          text: 'BMWi-Förderung',
+          text2:
+              'Ein Teil unserer Forschungs- und Entwicklungsarbeiten werden gefördert durch das Bundesministerium für Wirtschaft und Technologie aufgrund eines Beschlusses des Deutschen Bundestages.',
+          nav1: null,
+          pic: 'assets/images/BMWi.gif'),
     ];
 
     return Scaffold(

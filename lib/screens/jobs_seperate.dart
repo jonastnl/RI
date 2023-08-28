@@ -107,7 +107,9 @@ class _JobsSeperate extends State<JobsSeperate> {
               width: screenSize.width / 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateToImpressum(context);
+              },
               child: const Text(
                 'Impressum',
                 style: TextStyle(color: Colors.white),
@@ -189,6 +191,9 @@ class _JobsSeperate extends State<JobsSeperate> {
                 },
                 childCount: containersBig.length,
               ),
+            ),
+            SliverToBoxAdapter(
+              child: BottomBar(),
             ),
           ],
         ));

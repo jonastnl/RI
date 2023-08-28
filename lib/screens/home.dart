@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:mynotes/screens/automatisierung.dart';
 import 'package:mynotes/screens/hardware.dart';
+import 'package:mynotes/screens/impressum.dart';
 import 'package:mynotes/screens/jobs.dart';
 import 'package:mynotes/screens/jobs_seperate.dart';
 import 'package:mynotes/screens/kontakt.dart';
@@ -98,7 +99,9 @@ class _Home extends State<Home> {
               width: screenSize.width / 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateToImpressum(context);
+              },
               child: const Text(
                 'Impressum',
                 style: TextStyle(color: Colors.white),
@@ -372,5 +375,12 @@ void navigateToJob4(BuildContext context) {
     MaterialPageRoute(
         builder: (context) =>
             JobsSeperate(title1: jobTitle[3], text1: jobText[3])),
+  );
+}
+
+void navigateToImpressum(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const Impressum()),
   );
 }

@@ -116,7 +116,9 @@ class _Jobs extends State<Jobs> {
               width: screenSize.width / 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                navigateToImpressum(context);
+              },
               child: const Text(
                 'Impressum',
                 style: TextStyle(color: Colors.white),

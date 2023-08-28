@@ -9,6 +9,7 @@ class MyContainerPic extends StatelessWidget {
     required this.text,
     required this.text2,
     required this.nav1,
+    required this.pic,
   });
 
   final BuildContext context;
@@ -17,6 +18,7 @@ class MyContainerPic extends StatelessWidget {
   final String text;
   final String text2;
   final nav1;
+  final pic;
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +39,21 @@ class MyContainerPic extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(text2, style: const TextStyle(fontSize: 15)),
                 const SizedBox(height: 10),
-                Row(children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {
-                      nav1(context);
-                    },
-                    child: const Text('mehr Erfahren...'),
-                  ),
-                ]),
+                Center(
+                  child: Column(children: <Widget>[
+                    ElevatedButton(
+                      onPressed: () {
+                        nav1(context);
+                      },
+                      child: const Text('mehr Erfahren... Link einfügen'),
+                    ),
+                    SizedBox(height: 20),
+                  ]),
+                ),
                 SizedBox(
                     height: screenSize.height * 0.2,
                     child: Image.asset(
-                      'assets/images/BMWi.gif',
+                      pic,
                       fit: BoxFit.cover,
                     )),
               ]))))
