@@ -6,7 +6,6 @@ import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
 import 'package:mynotes/screens/unternehmen.dart';
 import 'package:mynotes/widget/myContainer1.dart';
-import 'package:mynotes/widget/myContainerPic.dart';
 
 class Kontakt extends StatefulWidget {
   const Kontakt({super.key});

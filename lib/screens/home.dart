@@ -163,17 +163,20 @@ class _Home extends State<Home> {
     List<Widget> containersSmall = [
       MyContainer3(
           context: context,
-          alignment: Alignment.topLeft,
+          alignment: Alignment.topRight,
           color: const Color.fromARGB(255, 204, 55, 40).withOpacity(0.3),
           text: 'Kontakt',
-          text2: 'Adresse',
+          text2: 'RAYEN INTEC GmbH\nAM Hohen Ufer 4\nD-07318 Saalfeld',
+          text3:
+              'Tel.: +49 (3671) 5366-0\nFax: +49 (3671) 5366-50\n\neMail: info@rayen-intec.de',
           nav1: null),
-      MyContainer3(
+      MyContainer1(
           context: context,
           alignment: Alignment.topLeft,
           color: const Color.fromARGB(255, 204, 55, 40).withOpacity(0.3),
           text: 'Fernwartung',
-          text2: 'blabla',
+          text2:
+              'Unseren Kunden können wir auch über das Internet direkt am eigenen Windows-Computer helfen. Dazu loggen wir uns über eine Fernwartungssoftware auf Ihrem Bildschirm ein.',
           nav1: null),
     ];
 

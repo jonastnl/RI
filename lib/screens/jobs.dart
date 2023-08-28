@@ -120,8 +120,7 @@ class _Jobs extends State<Jobs> {
         alignment: Alignment.topLeft,
         color: const Color.fromARGB(255, 53, 80, 112).withOpacity(1),
         text: 'Profil',
-        text2:
-            'Die RAYEN INTEC GmbH wurde im Jahr 1990 als Dienstleister für Entwicklung industrieller Anlagenautomatisierung gegründet. Die zu dieser Zeit beginnende Verschmelzung von Automatisierung und elektronischer Datenverarbeitung führte uns zu einem zukuftsorierentierten Jobs in den Geschäftbereichen von Automatisierung sowie IT-Hard- and Software. \n\nHeute verstehen wir uns als modernes, leistungsstarkes und innovatives Jobs für unseren Kunden. Gemeinsam optimieren wir Prozesse, erstellen Lösungen und integrieren diese in vorhandene IT-Systeme. Fortschritt und Innovation sind unser Antrieb!',
+        text2: 'i',
         nav1: null,
       ),
       Container(
@@ -199,7 +198,7 @@ class _Jobs extends State<Jobs> {
               childCount: containersSmall.length,
             ),
           ),
-          SliverToBoxAdapter(child: BottomBar()),
+          const SliverToBoxAdapter(child: BottomBar()),
         ]));
   }
 }

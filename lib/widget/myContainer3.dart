@@ -8,6 +8,7 @@ class MyContainer3 extends StatelessWidget {
     required this.color,
     required this.text,
     required this.text2,
+    required this.text3,
     required this.nav1,
   });
 
@@ -16,6 +17,7 @@ class MyContainer3 extends StatelessWidget {
   final color;
   final String text;
   final String text2;
+  final String text3;
   final nav1;
 
   @override
@@ -34,16 +36,15 @@ class MyContainer3 extends StatelessWidget {
                     style: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 10),
-                Text(text2, style: const TextStyle(fontSize: 15)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(text2, style: const TextStyle(fontSize: 15)),
+                    SizedBox(width: 20),
+                    Text(text3, style: const TextStyle(fontSize: 15)),
+                  ],
+                ),
                 const SizedBox(height: 10),
-                Row(children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {
-                      nav1(context);
-                    },
-                    child: const Text('mehr Erfahren...'),
-                  ),
-                ]),
               ]))))
     ]);
   }
