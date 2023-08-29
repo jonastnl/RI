@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mynotes/screens/automatisierung.dart';
-import 'package:mynotes/screens/hardware.dart';
 
-import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
-import 'package:mynotes/screens/kontakt.dart';
-import 'package:mynotes/screens/unternehmen.dart';
+
+import 'package:mynotes/widget/appbar.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
 
@@ -22,102 +19,6 @@ class JobsSeperate extends StatefulWidget {
 
 class _JobsSeperate extends State<JobsSeperate> {
   String title2 = '';
-  final List _isHovering = [false, false, false, false, false, false];
-  Widget myInkWell(String text, nav, int ind) {
-    return InkWell(
-      onHover: (value) {
-        setState(() {
-          _isHovering[ind] = value;
-        });
-      },
-      onTap: () {
-        nav(context);
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            text,
-            style: TextStyle(
-              color: _isHovering[ind] ? Colors.blue.shade200 : Colors.white,
-            ),
-          ),
-          const SizedBox(height: 5),
-          // For showing an underline on hover
-          Visibility(
-            maintainAnimation: true,
-            maintainState: true,
-            maintainSize: true,
-            visible: _isHovering[ind],
-            child: Container(
-              height: 2,
-              width: 20,
-              color: Colors.white,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget myAppBar(context) {
-    var screenSize = MediaQuery.of(context).size;
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: <Color>[
-            const Color.fromARGB(255, 204, 55, 40).withOpacity(0.8),
-            const Color.fromARGB(255, 204, 55, 40).withOpacity(0.0),
-          ],
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Row(
-          children: [
-            GestureDetector(
-              onTap: () {
-                navigateToHome(context);
-              },
-              child: const Text('RAYEN INTEC',
-                  style: TextStyle(color: Colors.white, fontSize: 20)),
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  myInkWell('Automatisierung', navigateToAutomatisierung, 0),
-                  SizedBox(width: screenSize.width / 20),
-                  myInkWell('Hard- und Software', navigateToHardware, 1),
-                  SizedBox(width: screenSize.width / 20),
-                  myInkWell('Unternehmen', navigateToUnternehmen, 2),
-                  SizedBox(width: screenSize.width / 20),
-                  myInkWell('Jobs', navigateToJobs, 3),
-                  SizedBox(width: screenSize.width / 20),
-                  myInkWell('Kontakt', navigateToKontakt, 4),
-                  //SizedBox(width: screenSize.width / 20),
-                ],
-              ),
-            ),
-            SizedBox(
-              width: screenSize.width / 50,
-            ),
-            InkWell(
-              onTap: () {
-                navigateToImpressum(context);
-              },
-              child: const Text(
-                'Impressum',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   List<String> jobTitle = [
     'Automatisierungstechniker (m/w)',
@@ -142,8 +43,8 @@ class _JobsSeperate extends State<JobsSeperate> {
         color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
         text: widget.title1,
         text2: widget.text1,
-        nav1: navigateToJob1,
-        buttonText: 'Jetzt Bewerben',
+        nav1: null,
+        buttonText: 'Jetzt Bewerben... Link einfügen',
       ),
     ];
 
@@ -153,15 +54,8 @@ class _JobsSeperate extends State<JobsSeperate> {
         extendBodyBehindAppBar: true,
         appBar: PreferredSize(
           preferredSize: Size(screenSize.width, 1000),
-          child: myAppBar(context),
+          child: const MyAppBar(),
         ),
-        /*body: Column(
-          children: [
-            Text(widget.title1),
-            Text(widget.text1),
-          ],
-        )*/
-
         body: CustomScrollView(
           slivers: <Widget>[
             SliverToBoxAdapter(
@@ -196,48 +90,6 @@ class _JobsSeperate extends State<JobsSeperate> {
           ],
         ));
   }
-}
-
-void navigateToHome(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Home()),
-  );
-}
-
-void navigateToAutomatisierung(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Automatisierung()),
-  );
-}
-
-void navigateToHardware(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Hardware()),
-  );
-}
-
-void navigateToUnternehmen(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Unternehmen()),
-  );
-}
-
-void navigateToJobs(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Jobs()),
-  );
-}
-
-void navigateToKontakt(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const Kontakt()),
-  );
 }
 
 void navigateToJob1(BuildContext context) {

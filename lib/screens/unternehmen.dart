@@ -5,6 +5,7 @@ import 'package:mynotes/screens/hardware.dart';
 import 'package:mynotes/screens/home.dart';
 import 'package:mynotes/screens/jobs.dart';
 import 'package:mynotes/screens/kontakt.dart';
+import 'package:mynotes/widget/appbar.dart';
 import 'package:mynotes/widget/bottom_bar.dart';
 import 'package:mynotes/widget/myContainer1.dart';
 import 'package:mynotes/widget/myContainerPic.dart';
@@ -17,7 +18,7 @@ class Unternehmen extends StatefulWidget {
 }
 
 class _Unternehmen extends State<Unternehmen> {
-  final List _isHovering = [false, false, false, false, false, false];
+  /*final List _isHovering = [false, false, false, false, false, false];
   Widget myInkWell(String text, nav, int ind) {
     return InkWell(
       onHover: (value) {
@@ -112,7 +113,7 @@ class _Unternehmen extends State<Unternehmen> {
         ),
       ),
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -158,7 +159,7 @@ class _Unternehmen extends State<Unternehmen> {
         extendBodyBehindAppBar: true,
         appBar: PreferredSize(
           preferredSize: Size(screenSize.width, 1000),
-          child: myAppBar(context),
+          child: const MyAppBar(),
         ),
         body: CustomScrollView(slivers: <Widget>[
           SliverToBoxAdapter(
