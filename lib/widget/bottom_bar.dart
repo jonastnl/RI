@@ -11,8 +11,8 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(30),
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage('assets/images/pexels-cátia-matos-1072179.jpg'),
         fit: BoxFit.cover,
@@ -60,7 +60,7 @@ class BottomBar extends StatelessWidget {
                     type: 'Email',
                     text: 'info@rayen-intec.de',
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   InfoText(
                     type: 'Adresse',
                     text: 'Am Hohen Ufer 4, 07318 Saalfeld',

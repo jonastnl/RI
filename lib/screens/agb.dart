@@ -161,7 +161,7 @@ class _Agb extends State<Agb> {
               childCount: containersBig.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));

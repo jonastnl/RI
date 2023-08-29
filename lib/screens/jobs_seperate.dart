@@ -190,7 +190,7 @@ class _JobsSeperate extends State<JobsSeperate> {
                 childCount: containersBig.length,
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: BottomBar(),
             ),
           ],

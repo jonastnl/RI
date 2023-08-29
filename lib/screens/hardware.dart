@@ -117,15 +117,13 @@ class _Hardware extends State<Hardware> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     List<Widget> containersBig = [
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
       MyContainer1(
         context: context,
         alignment: Alignment.topLeft,
@@ -148,24 +146,20 @@ class _Hardware extends State<Hardware> {
         nav1: null,
         buttonText: 'mehr Erfahren...',
       ),
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
       MyContainer1(
         context: context,
         alignment: Alignment.topLeft,
@@ -186,27 +180,23 @@ class _Hardware extends State<Hardware> {
         nav1: null,
         buttonText: 'mehr Erfahren...',
       ),
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
     ];
 
     List<Widget> containersSmall = [
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
       MyContainer1(
         context: context,
         alignment: Alignment.topLeft,
@@ -286,7 +276,7 @@ class _Hardware extends State<Hardware> {
               childCount: containersSmall.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));

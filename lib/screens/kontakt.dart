@@ -118,15 +118,13 @@ class _Kontakt extends State<Kontakt> {
     var screenSize = MediaQuery.of(context).size;
 
     List<Widget> containersSmall = [
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
       MyContainer1(
           context: context,
           alignment: Alignment.topLeft,
@@ -148,13 +146,11 @@ class _Kontakt extends State<Kontakt> {
               'Sie erreichen und Montag bis Freitag zu unseren Bürozeiten von 08:00 Uhr bis 16:00 Uhr unter folgender Anschrift: \n\nRAYEN INTEC GmbH\nAM Hohen Ufer 4\nD-07318 Saalfeld\n\nTel.: +49 (3671) 5366-0\nFax: +49 (3671) 5366-50\n\neMail: info@rayen-intec.de',
           nav1: null,
           buttonText: 'mehr Erfahren...'),
-      Container(
-        child: SizedBox(
-            child: Image.asset(
-          'assets/images/pexels-cátia-matos-1072179.jpg',
-          fit: BoxFit.cover,
-        )),
-      ),
+      SizedBox(
+          child: Image.asset(
+        'assets/images/pexels-cátia-matos-1072179.jpg',
+        fit: BoxFit.cover,
+      )),
     ];
 
     return Scaffold(
@@ -203,7 +199,7 @@ class _Kontakt extends State<Kontakt> {
               childCount: containersSmall.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));

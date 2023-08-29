@@ -47,7 +47,7 @@ class MyContainerPic extends StatelessWidget {
                       },
                       child: const Text('mehr Erfahren... Link einfügen'),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ]),
                 ),
                 SizedBox(

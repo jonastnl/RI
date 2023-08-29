@@ -128,25 +128,21 @@ class _Unternehmen extends State<Unternehmen> {
         nav1: null,
         buttonText: 'mehr Erfahren...',
       ),
-      Container(
-        child: SizedBox(
-            height: screenSize.height * 0.4,
-            width: screenSize.width,
-            child: Image.asset(
-              'assets/images/pexels-cátia-matos-1072179.jpg',
-              fit: BoxFit.cover,
-            )),
-      ),
+      SizedBox(
+          height: screenSize.height * 0.4,
+          width: screenSize.width,
+          child: Image.asset(
+            'assets/images/pexels-cátia-matos-1072179.jpg',
+            fit: BoxFit.cover,
+          )),
     ];
 
     List<Widget> containersSmall = [
-      Container(
-        child: SizedBox(
-            child: Image.asset(
-          'assets/images/pexels-cátia-matos-1072179.jpg',
-          fit: BoxFit.cover,
-        )),
-      ),
+      SizedBox(
+          child: Image.asset(
+        'assets/images/pexels-cátia-matos-1072179.jpg',
+        fit: BoxFit.cover,
+      )),
       MyContainerPic(
           context: context,
           alignment: Alignment.topLeft,
@@ -204,7 +200,7 @@ class _Unternehmen extends State<Unternehmen> {
               childCount: containersSmall.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));

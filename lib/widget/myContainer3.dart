@@ -40,7 +40,7 @@ class MyContainer3 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(text2, style: const TextStyle(fontSize: 15)),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     Text(text3, style: const TextStyle(fontSize: 15)),
                   ],
                 ),

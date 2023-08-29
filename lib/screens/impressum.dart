@@ -161,7 +161,7 @@ class _Impressum extends State<Impressum> {
               childCount: containersBig.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));

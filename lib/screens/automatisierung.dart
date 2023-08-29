@@ -231,8 +231,8 @@ class _Automatisierung extends State<Automatisierung> {
               childCount: containersBig.length,
             ),
           ),
-          SliverToBoxAdapter(
-            child: const BottomBar(),
+          const SliverToBoxAdapter(
+            child: BottomBar(),
           )
         ]),
       ]),

@@ -149,7 +149,7 @@ class _Home extends State<Home> {
         alignment: Alignment.topLeft,
         color: const Color.fromARGB(255, 154, 3, 30).withOpacity(0.5),
         text: 'Stellenangebote Automatisierung',
-        text2: [
+        text2: const [
           'Automatisierungstechniker (m/w)',
           '',
           'Elektroprojektant (m/w)',
@@ -163,7 +163,7 @@ class _Home extends State<Home> {
         alignment: Alignment.topLeft,
         color: const Color.fromARGB(255, 53, 80, 112).withOpacity(0.5),
         text: 'Stellenangebote EDV-Technik',
-        text2: [
+        text2: const [
           'Netzwerkadministrator Windows (m/w)',
           '',
           'Software-Entwickler ',
@@ -274,7 +274,7 @@ class _Home extends State<Home> {
               childCount: containersSmall.length,
             ),
           ),
-          SliverToBoxAdapter(child: BottomBar()),
+          const SliverToBoxAdapter(child: BottomBar()),
           /* Expanded(
                     child: GridView.builder(
       

@@ -161,7 +161,7 @@ class _Datenschutz extends State<Datenschutz> {
               childCount: containersBig.length,
             ),
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: BottomBar(),
           )
         ]));
